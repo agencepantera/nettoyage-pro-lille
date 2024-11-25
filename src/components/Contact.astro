@@ -1,0 +1,48 @@
+---
+import { Phone, Mail, MapPin } from 'lucide-astro';
+import ContactForm from './ContactForm.astro';
+---
+
+<section class="py-24 bg-gray-50" id="contact">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-3xl font-bold mb-6">Contactez-nous</h2>
+        <p class="text-gray-600 mb-8">
+          Besoin d'un devis ou d'informations ? N'hésitez pas à nous contacter.
+          Notre équipe est à votre disposition pour répondre à toutes vos questions.
+        </p>
+        
+        <div class="space-y-6">
+          <div class="flex items-center">
+            <Phone class="h-6 w-6 text-primary mr-4" />
+            <div>
+              <h3 class="font-semibold">Téléphone</h3>
+              <p class="text-gray-600">03 20 XX XX XX</p>
+            </div>
+          </div>
+          
+          <div class="flex items-center">
+            <Mail class="h-6 w-6 text-primary mr-4" />
+            <div>
+              <h3 class="font-semibold">Email</h3>
+              <p class="text-gray-600">contact@nettoyage-pro-lille.fr</p>
+            </div>
+          </div>
+          
+          <div class="flex items-center">
+            <MapPin class="h-6 w-6 text-primary mr-4" />
+            <div>
+              <h3 class="font-semibold">Zone d'intervention</h3>
+              <p class="text-gray-600">Lille et sa métropole</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <ContactForm />
+      </div>
+    </div>
+  </div>
+</section>

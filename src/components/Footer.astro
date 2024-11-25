@@ -1,0 +1,78 @@
+---
+import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-astro';
+---
+
+<footer class="bg-gray-900 text-white">
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-lg font-bold mb-4">Nettoyage Pro Lille</h3>
+        <p class="text-gray-400">
+          Service professionnel de nettoyage à domicile sur Lille et sa métropole.
+        </p>
+      </div>
+      
+      <div>
+        <h3 class="text-lg font-bold mb-4">Contact</h3>
+        <div class="space-y-2">
+          <p class="flex items-center text-gray-400">
+            <Phone class="h-4 w-4 mr-2" />
+            03 20 XX XX XX
+          </p>
+          <p class="flex items-center text-gray-400">
+            <Mail class="h-4 w-4 mr-2" />
+            contact@nettoyage-pro-lille.fr
+          </p>
+          <p class="flex items-center text-gray-400">
+            <MapPin class="h-4 w-4 mr-2" />
+            Lille et sa métropole
+          </p>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="text-lg font-bold mb-4">Services</h3>
+        <ul class="space-y-2 text-gray-400">
+          <li>
+            <a href="/services/canapes" class="hover:text-white">
+              Nettoyage de Canapés
+            </a>
+          </li>
+          <li>
+            <a href="/services/matelas" class="hover:text-white">
+              Nettoyage de Matelas
+            </a>
+          </li>
+          <li>
+            <a href="/services/tapis" class="hover:text-white">
+              Nettoyage de Tapis
+            </a>
+          </li>
+          <li>
+            <a href="/services/sieges-auto" class="hover:text-white">
+              Nettoyage de Sièges Auto
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-lg font-bold mb-4">Suivez-nous</h3>
+        <div class="flex space-x-4">
+          <a href="https://facebook.com/nettoyageprolille" class="hover:text-primary flex items-center gap-2">
+            <Facebook class="h-6 w-6" />
+            <span class="sr-only">Suivez-nous sur Facebook</span>
+          </a>
+          <a href="https://instagram.com/nettoyageprolille" class="hover:text-primary flex items-center gap-2">
+            <Instagram class="h-6 w-6" />
+            <span class="sr-only">Suivez-nous sur Instagram</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+      <p>© {new Date().getFullYear()} Nettoyage Pro Lille. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>

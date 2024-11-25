@@ -1,0 +1,46 @@
+---
+import { Sofa, Car, Bed, Camera } from 'lucide-astro';
+
+const services = [
+  {
+    title: 'Nettoyage de Canapés',
+    description: 'Redonnez vie à vos canapés avec notre service de nettoyage professionnel en profondeur.',
+    icon: Sofa,
+  },
+  {
+    title: 'Nettoyage de Sièges Auto',
+    description: 'Un service complet de nettoyage pour vos sièges auto, éliminant taches et odeurs.',
+    icon: Car,
+  },
+  {
+    title: 'Nettoyage de Matelas',
+    description: 'Élimination des acariens et assainissement complet de vos matelas.',
+    icon: Bed,
+  },
+  {
+    title: 'Nettoyage de Tapis',
+    description: 'Nettoyage en profondeur de vos tapis, ravivant leurs couleurs d\'origine.',
+    icon: Camera,
+  },
+];
+---
+
+<section class="py-24 bg-gray-50" id="services">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold mb-4">Nos Services</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Des solutions professionnelles de nettoyage adaptées à tous vos besoins
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map((service) => (
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          <service.icon class="h-12 w-12 text-primary mb-4" />
+          <h3 class="text-xl font-semibold mb-2">{service.title}</h3>
+          <p class="text-gray-600">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

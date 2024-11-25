@@ -1,0 +1,49 @@
+---
+import { CheckCircle2 } from 'lucide-astro';
+
+const steps = [
+  {
+    title: 'Prise de Contact',
+    description: 'Appelez-nous ou remplissez notre formulaire en ligne pour décrire vos besoins',
+  },
+  {
+    title: 'Devis Gratuit',
+    description: 'Recevez un devis personnalisé adapté à vos besoins spécifiques',
+  },
+  {
+    title: 'Intervention',
+    description: 'Nos experts interviennent à votre domicile avec leur matériel professionnel',
+  },
+  {
+    title: 'Satisfaction',
+    description: 'Profitez de vos meubles et textiles parfaitement nettoyés et assainis',
+  },
+];
+---
+
+<section class="py-24 bg-gray-50" id="process">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold mb-4">Notre Processus</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Une approche simple et efficace pour répondre à vos besoins
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {steps.map((step, index) => (
+        <div class="relative">
+          {index < steps.length - 1 && (
+            <div class="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-gray-300" />
+          )}
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white mb-6">
+              <CheckCircle2 class="h-8 w-8" />
+            </div>
+            <h3 class="text-xl font-semibold mb-3">{step.title}</h3>
+            <p class="text-gray-600">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

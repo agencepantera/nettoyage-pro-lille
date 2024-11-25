@@ -1,0 +1,78 @@
+---
+import { Menu, X, PhoneCall } from 'lucide-astro';
+
+const links = [
+  { href: '/services', label: 'Nos Services' },
+  { href: '/zone-intervention', label: 'Zone d\'Intervention' },
+  { href: '/#process', label: 'Notre Processus' },
+  { href: '/#testimonials', label: 'Avis Clients' },
+  { href: '/#contact', label: 'Contact' },
+];
+---
+
+<header class="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="text-xl font-bold text-primary">
+        Nettoyage Pro Lille
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8">
+        {links.map(link => (
+          <a href={link.href} class="text-gray-600 hover:text-primary">
+            {link.label}
+          </a>
+        ))}
+        <a 
+          href="/#contact"
+          class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors"
+        >
+          <PhoneCall class="mr-2 h-4 w-4" />
+          03 20 XX XX XX
+        </a>
+      </nav>
+
+      <button
+        id="menuButton"
+        class="md:hidden"
+        aria-label="Menu"
+      >
+        <Menu class="block" />
+        <X class="hidden" />
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden">
+    <nav class="px-4 pt-2 pb-4 bg-white">
+      {links.map(link => (
+        <a
+          href={link.href}
+          class="block py-2 text-gray-600 hover:text-primary"
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="/#contact"
+        class="block mt-2 text-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors"
+      >
+        <PhoneCall class="inline-block mr-2 h-4 w-4" />
+        03 20 XX XX XX
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const menuButton = document.getElementById('menuButton');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = menuButton?.querySelector('.lucide-menu');
+  const closeIcon = menuButton?.querySelector('.lucide-x');
+
+  menuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+</script>

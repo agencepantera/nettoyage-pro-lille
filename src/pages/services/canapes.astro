@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { PhoneCall, CheckCircle2, Shield, Sparkles, Sofa, Droplets } from 'lucide-astro';
+
+const title = 'Nettoyage de Canapés à Lille | Service Professionnel à Domicile';
+const description = 'Service expert de nettoyage de canapés à Lille. Traitement en profondeur, élimination des taches et odeurs, résultat garanti. Devis gratuit.';
+
+const features = [
+  {
+    title: "Nettoyage en Profondeur",
+    description: "Élimination totale des taches et odeurs",
+    icon: Droplets
+  },
+  {
+    title: "Protection Durable",
+    description: "Traitement anti-taches longue durée",
+    icon: Shield
+  },
+  {
+    title: "Résultat Garanti",
+    description: "Satisfaction client assurée",
+    icon: Sparkles
+  }
+];
+---
+
+<Layout {title} {description}>
+  <div class="relative">
+    <!-- Hero Section -->
+    <div class="relative h-[60vh] flex items-center justify-center">
+      <img
+        src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&q=80"
+        alt="Nettoyage professionnel de canapé"
+        class="absolute inset-0 w-full h-full object-cover brightness-50"
+      />
+      <div class="relative z-10 text-center text-white px-4">
+        <h1 class="text-5xl font-bold mb-6">Nettoyage Professionnel de Canapés</h1>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Redonnez vie à vos canapés avec notre service expert de nettoyage à domicile sur Lille
+        </p>
+        <a
+          href="#contact"
+          class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-black hover:bg-white/90 transition-colors"
+        >
+          <PhoneCall class="mr-2 h-5 w-5" />
+          Devis gratuit
+        </a>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {features.map((feature) => (
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+              <feature.icon class="h-12 w-12 text-primary mb-4" />
+              <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="space-y-8">
+          <div class="bg-gray-50 rounded-2xl p-8 shadow-inner">
+            <h2 class="text-2xl font-bold mb-6">Notre Expertise</h2>
+            <div class="prose max-w-none text-gray-600">
+              <p class="mb-4">
+                Spécialistes du nettoyage de canapés depuis plus de 10 ans, nous avons développé une 
+                expertise unique dans le traitement de tous types de revêtements. Notre approche combine 
+                technologies avancées et savoir-faire artisanal pour des résultats exceptionnels.
+              </p>
+              <p class="mb-4">
+                Nous utilisons des équipements professionnels de dernière génération et des produits 
+                spécifiquement adaptés à chaque type de tissu. Notre processus de nettoyage en profondeur 
+                assure non seulement l'élimination des taches visibles mais aussi une désinfection complète.
+              </p>
+              <p>
+                Chaque intervention est personnalisée selon le type de canapé et son état, garantissant 
+                ainsi un traitement optimal et des résultats durables pour votre confort et votre intérieur.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-primary/5 rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Notre Processus de Nettoyage</h2>
+            <div class="space-y-4">
+              {[
+                {
+                  title: "Diagnostic Complet",
+                  description: "Évaluation détaillée du type de tissu et des zones à traiter"
+                },
+                {
+                  title: "Aspiration Approfondie",
+                  description: "Élimination des poussières et particules incrustées"
+                },
+                {
+                  title: "Pré-traitement Ciblé",
+                  description: "Application de solutions spécifiques sur les taches"
+                },
+                {
+                  title: "Nettoyage en Profondeur",
+                  description: "Injection-extraction pour une propreté optimale"
+                },
+                {
+                  title: "Protection Durable",
+                  description: "Application d'un traitement protecteur anti-taches"
+                }
+              ].map((step, index) => (
+                <div class="flex gap-4">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <h3 class="font-semibold mb-1">{step.title}</h3>
+                    <p class="text-gray-600">{step.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <div class="bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold mb-6">Types de Canapés Traités</h2>
+            <div class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  "Canapés en tissu",
+                  "Canapés en cuir",
+                  "Canapés en velours",
+                  "Canapés en microfibre",
+                  "Canapés d'angle",
+                  "Canapés convertibles",
+                  "Méridienne",
+                  "Fauteuils & Poufs"
+                ].map((type) => (
+                  <div class="flex items-center gap-2">
+                    <CheckCircle2 class="h-5 w-5 text-primary" />
+                    <span>{type}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Nos Services Spécialisés</h2>
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <Droplets class="h-6 w-6 text-primary flex-shrink-0" />
+                <div>
+                  <h3 class="font-semibold mb-2">Détachage Professionnel</h3>
+                  <p class="text-gray-600">
+                    Traitement spécifique pour chaque type de tache : vin, café, graisse, encre, etc.
+                    Nos techniques avancées permettent d'éliminer même les taches les plus tenaces.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <Sofa class="h-6 w-6 text-primary flex-shrink-0" />
+                <div>
+                  <h3 class="font-semibold mb-2">Rénovation Complète</h3>
+                  <p class="text-gray-600">
+                    Service de rénovation pour redonner une seconde vie à vos canapés : ravivage des 
+                    couleurs, traitement des déchirures, restauration du confort.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <Shield class="h-6 w-6 text-primary flex-shrink-0" />
+                <div>
+                  <h3 class="font-semibold mb-2">Protection Longue Durée</h3>
+                  <p class="text-gray-600">
+                    Application d'un traitement protecteur qui forme une barrière invisible contre 
+                    les taches et facilite l'entretien quotidien.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-primary text-white rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Demandez un Devis Personnalisé</h2>
+            <p class="mb-6">
+              Contactez-nous pour obtenir un devis gratuit adapté à vos besoins. Nos experts 
+              sont à votre écoute pour vous conseiller sur le meilleur traitement pour vos canapés.
+            </p>
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center w-full px-6 py-3 rounded-lg bg-white text-black hover:bg-white/90 transition-colors"
+            >
+              <PhoneCall class="mr-2 h-5 w-5" />
+              Nous Contacter
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="mt-16">
+        <h2 class="text-2xl font-bold mb-8">Questions Fréquentes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              question: "Combien de temps dure le nettoyage ?",
+              answer: "La durée varie selon la taille et l'état du canapé, généralement entre 1h30 et 3h pour un nettoyage complet."
+            },
+            {
+              question: "Les produits utilisés sont-ils sans danger ?",
+              answer: "Oui, nous utilisons exclusivement des produits professionnels certifiés, respectueux de l'environnement et sans danger pour votre santé et vos animaux."
+            },
+            {
+              question: "Quel est le temps de séchage ?",
+              answer: "Le temps de séchage est d'environ 4-6 heures. Nous utilisons des techniques qui minimisent l'humidité résiduelle."
+            },
+            {
+              question: "Proposez-vous une garantie satisfaction ?",
+              answer: "Oui, nous garantissons votre satisfaction. En cas de résultat non satisfaisant, nous intervenons à nouveau gratuitement."
+            }
+          ].map((faq) => (
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="font-semibold mb-2">{faq.question}</h3>
+              <p class="text-gray-600">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

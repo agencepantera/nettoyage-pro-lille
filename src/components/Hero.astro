@@ -1,0 +1,70 @@
+---
+import { PhoneCall } from 'lucide-astro';
+---
+
+<section class="relative h-[90vh] flex items-center">
+  <picture>
+    <!-- Mobile (portrait) -->
+    <source
+      media="(max-width: 640px)"
+      srcset="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=60&w=390&h=844 1x,
+              https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=60&w=780&h=1688 2x"
+      width="390"
+      height="844"
+    />
+    <!-- Tablet -->
+    <source
+      media="(max-width: 1024px)"
+      srcset="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=60&w=768&h=576 1x,
+              https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=60&w=1536&h=1152 2x"
+      width="768"
+      height="576"
+    />
+    <!-- Desktop -->
+    <source
+      media="(min-width: 1025px)"
+      srcset="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=60&w=1280&h=720 1x,
+              https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=60&w=1920&h=1080 2x"
+      width="1280"
+      height="720"
+    />
+    <img
+      src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=60&w=390&h=844"
+      alt="Expert Textile Lille - Service professionnel de nettoyage et rénovation de textiles à domicile"
+      class="absolute inset-0 w-full h-full object-cover brightness-50"
+      width="390"
+      height="844"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </picture>
+  <div class="container relative z-10 mx-auto px-4">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+        Expert Textile Lille : Nettoyage et Rénovation à Domicile
+      </h1>
+      <p class="text-xl text-white/90 mb-8">
+        Spécialistes du nettoyage et de la rénovation de canapés, matelas, tapis et sièges auto.
+        Service rapide et résultats garantis sur Lille et sa métropole.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a 
+          href="#contact"
+          class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors"
+          aria-label="Demander un devis gratuit pour votre nettoyage"
+        >
+          <PhoneCall class="mr-2 h-5 w-5" />
+          Devis gratuit
+        </a>
+        <a
+          href="#services"
+          class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white/10 text-white border border-white hover:bg-white/20 transition-colors"
+          aria-label="Découvrir nos services de nettoyage et rénovation"
+        >
+          Nos services
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

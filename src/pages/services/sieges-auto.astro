@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { PhoneCall, CheckCircle2, Shield, Sparkles, Car, Clock } from 'lucide-astro';
+
+const title = 'Nettoyage de Sièges Auto à Lille | Service Professionnel';
+const description = 'Service expert de nettoyage de sièges automobiles à Lille. Élimination des taches, odeurs et allergènes. Intervention à domicile, devis gratuit.';
+
+const features = [
+  {
+    title: "Service à Domicile",
+    description: "Intervention sur votre lieu de préférence",
+    icon: Car
+  },
+  {
+    title: "Rapidité d'Intervention",
+    description: "Disponible sous 24-48h",
+    icon: Clock
+  },
+  {
+    title: "Expertise Garantie",
+    description: "Techniciens certifiés",
+    icon: Shield
+  }
+];
+---
+
+<Layout {title} {description}>
+  <div class="relative">
+    <!-- Hero Section -->
+    <div class="relative h-[60vh] flex items-center justify-center">
+      <img
+        src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&q=80"
+        alt="Nettoyage professionnel de sièges auto"
+        class="absolute inset-0 w-full h-full object-cover brightness-50"
+      />
+      <div class="relative z-10 text-center text-white px-4">
+        <h1 class="text-5xl font-bold mb-6">Nettoyage Professionnel de Sièges Auto</h1>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Redonnez une seconde jeunesse à vos sièges avec notre service expert à domicile sur Lille
+        </p>
+        <a
+          href="#contact"
+          class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-black hover:bg-white/90 transition-colors"
+        >
+          <PhoneCall class="mr-2 h-5 w-5" />
+          Devis gratuit
+        </a>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {features.map((feature) => (
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+              <feature.icon class="h-12 w-12 text-primary mb-4" />
+              <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="space-y-8">
+          <div class="bg-gray-50 rounded-2xl p-8 shadow-inner">
+            <h2 class="text-2xl font-bold mb-6">Notre Expertise</h2>
+            <div class="prose max-w-none text-gray-600">
+              <p class="mb-4">
+                Spécialisés dans le nettoyage automobile depuis plus de 10 ans, nous avons développé une expertise unique 
+                dans le traitement et la rénovation des sièges auto. Notre approche combine technologies avancées et 
+                savoir-faire artisanal pour des résultats exceptionnels.
+              </p>
+              <p class="mb-4">
+                Nous utilisons des équipements de dernière génération et des produits professionnels spécialement 
+                formulés pour chaque type de revêtement. Notre processus de nettoyage en profondeur élimine non 
+                seulement les taches visibles mais aussi les allergènes, les bactéries et les odeurs persistantes.
+              </p>
+              <p>
+                Chaque intervention est adaptée aux spécificités de votre véhicule et à l'état de vos sièges, 
+                garantissant ainsi un traitement optimal et des résultats durables.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-primary/5 rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Notre Processus de Nettoyage</h2>
+            <div class="space-y-4">
+              {[
+                {
+                  title: "Diagnostic Initial",
+                  description: "Évaluation détaillée de l'état des sièges et identification des zones problématiques"
+                },
+                {
+                  title: "Pré-traitement",
+                  description: "Application de solutions spécifiques pour désincruster les taches tenaces"
+                },
+                {
+                  title: "Nettoyage en Profondeur",
+                  description: "Utilisation de machines professionnelles pour une extraction optimale des salissures"
+                },
+                {
+                  title: "Désinfection",
+                  description: "Traitement antibactérien pour éliminer les germes et les allergènes"
+                },
+                {
+                  title: "Protection",
+                  description: "Application d'un traitement protecteur pour prolonger la durée de vie des sièges"
+                }
+              ].map((step, index) => (
+                <div class="flex gap-4">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <h3 class="font-semibold mb-1">{step.title}</h3>
+                    <p class="text-gray-600">{step.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <div class="bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold mb-6">Types de Traitements</h2>
+            <div class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  "Nettoyage standard",
+                  "Rénovation cuir",
+                  "Traitement anti-taches",
+                  "Désodorisation",
+                  "Traitement anti-allergènes",
+                  "Protection UV",
+                  "Réparation déchirures",
+                  "Ravivage des couleurs"
+                ].map((service) => (
+                  <div class="flex items-center gap-2">
+                    <CheckCircle2 class="h-5 w-5 text-primary" />
+                    <span>{service}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Pourquoi Choisir Notre Service ?</h2>
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <Shield class="h-6 w-6 text-primary flex-shrink-0" />
+                <div>
+                  <h3 class="font-semibold mb-2">Expertise Certifiée</h3>
+                  <p class="text-gray-600">
+                    Notre équipe est formée aux dernières techniques de nettoyage automobile et utilise 
+                    des équipements de pointe.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <Sparkles class="h-6 w-6 text-primary flex-shrink-0" />
+                <div>
+                  <h3 class="font-semibold mb-2">Produits Professionnels</h3>
+                  <p class="text-gray-600">
+                    Utilisation exclusive de produits haut de gamme, respectueux de l'environnement 
+                    et sans danger pour votre santé.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <Clock class="h-6 w-6 text-primary flex-shrink-0" />
+                <div>
+                  <h3 class="font-semibold mb-2">Service Rapide</h3>
+                  <p class="text-gray-600">
+                    Intervention à domicile sous 24-48h, avec des créneaux horaires flexibles pour 
+                    s'adapter à votre emploi du temps.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-primary text-white rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Demandez un Devis Personnalisé</h2>
+            <p class="mb-6">
+              Contactez-nous dès maintenant pour obtenir un devis gratuit adapté à vos besoins spécifiques. 
+              Nos experts sont à votre écoute pour vous conseiller sur la meilleure solution.
+            </p>
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center w-full px-6 py-3 rounded-lg bg-white text-black hover:bg-white/90 transition-colors"
+            >
+              <PhoneCall class="mr-2 h-5 w-5" />
+              Nous Contacter
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="mt-16">
+        <h2 class="text-2xl font-bold mb-8">Questions Fréquentes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              question: "Combien de temps dure une intervention ?",
+              answer: "La durée moyenne d'une intervention est de 2 à 3 heures, selon l'état des sièges et le type de traitement nécessaire."
+            },
+            {
+              question: "Les produits utilisés sont-ils sans danger ?",
+              answer: "Tous nos produits sont certifiés et respectent les normes environnementales. Ils sont sans danger pour vous et vos passagers."
+            },
+            {
+              question: "Quand puis-je utiliser mon véhicule après le nettoyage ?",
+              answer: "Le temps de séchage est d'environ 2-3 heures. Nous recommandons d'attendre ce délai pour une utilisation optimale."
+            },
+            {
+              question: "Proposez-vous une garantie ?",
+              answer: "Oui, nous offrons une garantie satisfaction sur tous nos services. En cas d'insatisfaction, nous intervenons gratuitement."
+            }
+          ].map((faq) => (
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="font-semibold mb-2">{faq.question}</h3>
+              <p class="text-gray-600">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

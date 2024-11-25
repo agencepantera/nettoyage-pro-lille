@@ -1,0 +1,48 @@
+---
+import { Shield, Clock, ThumbsUp, Sparkles } from 'lucide-astro';
+
+const benefits = [
+  {
+    title: 'Service Professionnel',
+    description: 'Équipe qualifiée et matériel professionnel pour des résultats optimaux',
+    icon: Shield,
+  },
+  {
+    title: 'Intervention Rapide',
+    description: 'Disponibilité sous 24-48h sur Lille et sa métropole',
+    icon: Clock,
+  },
+  {
+    title: 'Satisfaction Garantie',
+    description: 'Engagement qualité et suivi personnalisé de chaque intervention',
+    icon: ThumbsUp,
+  },
+  {
+    title: 'Produits Écologiques',
+    description: 'Utilisation de produits respectueux de l\'environnement',
+    icon: Sparkles,
+  },
+];
+---
+
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold mb-4">Pourquoi Nous Choisir ?</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Notre engagement pour votre satisfaction et notre expertise font la différence
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {benefits.map((benefit) => (
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
+            <benefit.icon class="h-8 w-8 text-primary" />
+          </div>
+          <h3 class="text-xl font-semibold mb-3">{benefit.title}</h3>
+          <p class="text-gray-600">{benefit.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

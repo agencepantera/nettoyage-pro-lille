@@ -1,0 +1,66 @@
+---
+import { Star } from 'lucide-astro';
+
+const testimonials = [
+  {
+    name: 'Sophie L.',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=60&w=80&h=80',
+    text: 'Service impeccable ! Mon canapé est comme neuf, je recommande vivement.',
+    rating: 5,
+  },
+  {
+    name: 'Thomas M.',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=60&w=80&h=80',
+    text: 'Équipe professionnelle et efficace. Résultat au-delà de mes attentes pour mes tapis.',
+    rating: 5,
+  },
+  {
+    name: 'Marie D.',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=60&w=80&h=80',
+    text: 'Excellent service client et travail de qualité sur mes sièges de voiture.',
+    rating: 5,
+  },
+];
+---
+
+<section class="py-24 bg-white" id="testimonials">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold mb-4">Avis de nos Clients</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Découvrez les retours d'expérience de nos clients satisfaits
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {testimonials.map((testimonial) => (
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <div class="flex items-center mb-4">
+            <div class="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+              <img
+                src={testimonial.image}
+                alt={`Photo de ${testimonial.name} - Client satisfait d'Expert Textile Lille`}
+                class="w-full h-full object-cover"
+                width="80"
+                height="80"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div>
+              <h3 class="font-semibold">{testimonial.name}</h3>
+              <div role="img" aria-label={`Note : ${testimonial.rating} étoiles sur 5`} class="flex">
+                {Array(testimonial.rating).fill(null).map((_, i) => (
+                  <span class="text-yellow-400">★</span>
+                ))}
+                {Array(5 - testimonial.rating).fill(null).map((_, i) => (
+                  <span class="text-gray-300">★</span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600">{testimonial.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

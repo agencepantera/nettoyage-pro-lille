@@ -1,0 +1,235 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { PhoneCall, CheckCircle2, Shield, Sparkles, Bed, Bug } from 'lucide-astro';
+
+const title = 'Nettoyage de Matelas à Lille | Service Professionnel Anti-Acariens';
+const description = 'Service expert de nettoyage et désinfection de matelas à Lille. Élimination des acariens, taches et odeurs. Intervention à domicile, devis gratuit.';
+
+const features = [
+  {
+    title: "Traitement Anti-Acariens",
+    description: "Élimination efficace des allergènes",
+    icon: Bug
+  },
+  {
+    title: "Désinfection Complète",
+    description: "Assainissement en profondeur",
+    icon: Sparkles
+  },
+  {
+    title: "Expertise Certifiée",
+    description: "Techniciens qualifiés",
+    icon: Shield
+  }
+];
+---
+
+<Layout {title} {description}>
+  <div class="relative">
+    <!-- Hero Section -->
+    <div class="relative h-[60vh] flex items-center justify-center">
+      <img
+        src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&q=80"
+        alt="Nettoyage professionnel de matelas"
+        class="absolute inset-0 w-full h-full object-cover brightness-50"
+      />
+      <div class="relative z-10 text-center text-white px-4">
+        <h1 class="text-5xl font-bold mb-6">Nettoyage Professionnel de Matelas</h1>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Un matelas propre et sain pour des nuits réparatrices. Service expert à domicile sur Lille
+        </p>
+        <a
+          href="#contact"
+          class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-black hover:bg-white/90 transition-colors"
+        >
+          <PhoneCall class="mr-2 h-5 w-5" />
+          Devis gratuit
+        </a>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {features.map((feature) => (
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+              <feature.icon class="h-12 w-12 text-primary mb-4" />
+              <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="space-y-8">
+          <div class="bg-gray-50 rounded-2xl p-8 shadow-inner">
+            <h2 class="text-2xl font-bold mb-6">Notre Expertise</h2>
+            <div class="prose max-w-none text-gray-600">
+              <p class="mb-4">
+                Spécialistes du nettoyage de matelas depuis plus de 10 ans, nous proposons un service complet 
+                de nettoyage et d'assainissement. Notre expertise nous permet de traiter efficacement tous les 
+                types de matelas et d'éliminer les allergènes, acariens et bactéries qui s'y accumulent.
+              </p>
+              <p class="mb-4">
+                Nous utilisons des équipements professionnels de dernière génération et des produits 
+                anti-acariens certifiés. Notre processus de nettoyage en profondeur assure non seulement 
+                l'élimination des taches visibles mais aussi une désinfection complète de votre matelas.
+              </p>
+              <p>
+                Chaque intervention est personnalisée selon le type de matelas et son état, garantissant 
+                ainsi un traitement optimal et des résultats durables pour votre santé et votre confort.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-primary/5 rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Notre Processus de Nettoyage</h2>
+            <div class="space-y-4">
+              {[
+                {
+                  title: "Inspection Détaillée",
+                  description: "Évaluation de l'état du matelas et identification des zones problématiques"
+                },
+                {
+                  title: "Aspiration Haute Performance",
+                  description: "Élimination des acariens et des particules en profondeur"
+                },
+                {
+                  title: "Traitement Anti-acariens",
+                  description: "Application d'une solution professionnelle anti-allergènes"
+                },
+                {
+                  title: "Nettoyage Vapeur",
+                  description: "Désinfection à haute température pour éliminer bactéries et acariens"
+                },
+                {
+                  title: "Protection Durable",
+                  description: "Application d'un traitement protecteur anti-acariens"
+                }
+              ].map((step, index) => (
+                <div class="flex gap-4">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <h3 class="font-semibold mb-1">{step.title}</h3>
+                    <p class="text-gray-600">{step.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <div class="bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold mb-6">Types de Traitements</h2>
+            <div class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  "Nettoyage standard",
+                  "Traitement anti-acariens",
+                  "Désinfection complète",
+                  "Élimination des odeurs",
+                  "Traitement anti-allergènes",
+                  "Détachage profond",
+                  "Désinfection UV",
+                  "Protection préventive"
+                ].map((service) => (
+                  <div class="flex items-center gap-2">
+                    <CheckCircle2 class="h-5 w-5 text-primary" />
+                    <span>{service}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Pourquoi Nettoyer Son Matelas ?</h2>
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <Bug class="h-6 w-6 text-primary flex-shrink-0" />
+                <div>
+                  <h3 class="font-semibold mb-2">Élimination des Acariens</h3>
+                  <p class="text-gray-600">
+                    Les acariens sont responsables de nombreuses allergies. Notre traitement 
+                    les élimine efficacement.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <Sparkles class="h-6 w-6 text-primary flex-shrink-0" />
+                <div>
+                  <h3 class="font-semibold mb-2">Hygiène Optimale</h3>
+                  <p class="text-gray-600">
+                    Un matelas propre contribue à une meilleure qualité de sommeil et à votre santé.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <Bed class="h-6 w-6 text-primary flex-shrink-0" />
+                <div>
+                  <h3 class="font-semibold mb-2">Durée de Vie Prolongée</h3>
+                  <p class="text-gray-600">
+                    Un entretien régulier permet de prolonger la durée de vie de votre matelas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-primary text-white rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Demandez un Devis Personnalisé</h2>
+            <p class="mb-6">
+              Contactez-nous pour obtenir un devis gratuit adapté à vos besoins. Nos experts 
+              sont à votre écoute pour vous conseiller sur le meilleur traitement.
+            </p>
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center w-full px-6 py-3 rounded-lg bg-white text-black hover:bg-white/90 transition-colors"
+            >
+              <PhoneCall class="mr-2 h-5 w-5" />
+              Nous Contacter
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="mt-16">
+        <h2 class="text-2xl font-bold mb-8">Questions Fréquentes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              question: "À quelle fréquence faut-il nettoyer son matelas ?",
+              answer: "Il est recommandé de nettoyer son matelas en profondeur tous les 6 à 12 mois pour maintenir une hygiène optimale."
+            },
+            {
+              question: "Combien de temps dure le nettoyage ?",
+              answer: "Le nettoyage complet d'un matelas dure environ 1h30 à 2h, selon sa taille et son état."
+            },
+            {
+              question: "Le traitement est-il sans danger ?",
+              answer: "Oui, nous utilisons uniquement des produits certifiés et hypoallergéniques, sans danger pour votre santé."
+            },
+            {
+              question: "Quand puis-je utiliser mon matelas après le nettoyage ?",
+              answer: "Le temps de séchage est d'environ 4-6 heures. Nous recommandons d'attendre ce délai avant d'utiliser le matelas."
+            }
+          ].map((faq) => (
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="font-semibold mb-2">{faq.question}</h3>
+              <p class="text-gray-600">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

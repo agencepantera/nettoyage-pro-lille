@@ -1,0 +1,235 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { PhoneCall, CheckCircle2, Shield, Sparkles, Camera, Droplets } from 'lucide-astro';
+
+const title = 'Nettoyage de Tapis à Lille | Service Professionnel à Domicile';
+const description = 'Service expert de nettoyage de tapis à Lille. Ravivage des couleurs, élimination des taches et odeurs. Intervention à domicile, devis gratuit.';
+
+const features = [
+  {
+    title: "Ravivage des Couleurs",
+    description: "Redonnez vie à vos tapis",
+    icon: Camera
+  },
+  {
+    title: "Nettoyage en Profondeur",
+    description: "Élimination totale des saletés",
+    icon: Droplets
+  },
+  {
+    title: "Expertise Garantie",
+    description: "Techniciens spécialisés",
+    icon: Shield
+  }
+];
+---
+
+<Layout {title} {description}>
+  <div class="relative">
+    <!-- Hero Section -->
+    <div class="relative h-[60vh] flex items-center justify-center">
+      <img
+        src="https://images.unsplash.com/photo-1534889156217-d643df14f14a?auto=format&fit=crop&q=80"
+        alt="Nettoyage professionnel de tapis"
+        class="absolute inset-0 w-full h-full object-cover brightness-50"
+      />
+      <div class="relative z-10 text-center text-white px-4">
+        <h1 class="text-5xl font-bold mb-6">Nettoyage Professionnel de Tapis</h1>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Redonnez éclat et fraîcheur à vos tapis avec notre service expert à domicile sur Lille
+        </p>
+        <a
+          href="#contact"
+          class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-black hover:bg-white/90 transition-colors"
+        >
+          <PhoneCall class="mr-2 h-5 w-5" />
+          Devis gratuit
+        </a>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {features.map((feature) => (
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+              <feature.icon class="h-12 w-12 text-primary mb-4" />
+              <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="space-y-8">
+          <div class="bg-gray-50 rounded-2xl p-8 shadow-inner">
+            <h2 class="text-2xl font-bold mb-6">Notre Expertise</h2>
+            <div class="prose max-w-none text-gray-600">
+              <p class="mb-4">
+                Forts de notre expérience dans le nettoyage de tapis, nous proposons un service 
+                complet adapté à tous types de tapis, des plus délicats aux plus résistants. Notre 
+                expertise nous permet de traiter efficacement les taches tenaces tout en préservant 
+                les fibres et les couleurs.
+              </p>
+              <p class="mb-4">
+                Nous utilisons des équipements professionnels de pointe et des produits spécialement 
+                formulés pour chaque type de fibre. Notre processus de nettoyage en profondeur assure 
+                non seulement l'élimination des taches mais aussi une désinfection complète.
+              </p>
+              <p>
+                Chaque tapis est traité avec le plus grand soin, en tenant compte de sa composition 
+                et de ses spécificités, pour garantir un résultat optimal tout en préservant sa qualité.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-primary/5 rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Notre Processus de Nettoyage</h2>
+            <div class="space-y-4">
+              {[
+                {
+                  title: "Diagnostic Initial",
+                  description: "Évaluation du type de tapis et des traitements nécessaires"
+                },
+                {
+                  title: "Dépoussiérage Profond",
+                  description: "Élimination de la poussière et des particules incrustées"
+                },
+                {
+                  title: "Pré-traitement",
+                  description: "Application de solutions adaptées aux taches spécifiques"
+                },
+                {
+                  title: "Nettoyage Principal",
+                  description: "Injection-extraction pour un nettoyage en profondeur"
+                },
+                {
+                  title: "Finition Soignée",
+                  description: "Brossage et séchage contrôlé pour un résultat parfait"
+                }
+              ].map((step, index) => (
+                <div class="flex gap-4">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <h3 class="font-semibold mb-1">{step.title}</h3>
+                    <p class="text-gray-600">{step.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <div class="bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold mb-6">Types de Tapis Traités</h2>
+            <div class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  "Tapis persans",
+                  "Tapis berbères",
+                  "Tapis en laine",
+                  "Tapis en soie",
+                  "Tapis synthétiques",
+                  "Tapis d'Orient",
+                  "Tapis contemporains",
+                  "Tapis sur mesure"
+                ].map((service) => (
+                  <div class="flex items-center gap-2">
+                    <CheckCircle2 class="h-5 w-5 text-primary" />
+                    <span>{service}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Nos Services Spécialisés</h2>
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <Droplets class="h-6 w-6 text-primary flex-shrink-0" />
+                <div>
+                  <h3 class="font-semibold mb-2">Détachage Avancé</h3>
+                  <p class="text-gray-600">
+                    Traitement spécifique pour chaque type de tache, des plus récentes aux plus anciennes.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <Camera class="h-6 w-6 text-primary flex-shrink-0" />
+                <div>
+                  <h3 class="font-semibold mb-2">Ravivage des Couleurs</h3>
+                  <p class="text-gray-600">
+                    Techniques professionnelles pour redonner éclat et vivacité aux couleurs de votre tapis.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <Shield class="h-6 w-6 text-primary flex-shrink-0" />
+                <div>
+                  <h3 class="font-semibold mb-2">Protection Durable</h3>
+                  <p class="text-gray-600">
+                    Application d'un traitement protecteur pour prolonger la propreté de votre tapis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-primary text-white rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Demandez un Devis Personnalisé</h2>
+            <p class="mb-6">
+              Contactez-nous pour obtenir un devis gratuit adapté à vos besoins. Nos experts 
+              sont à votre disposition pour vous conseiller sur le meilleur traitement.
+            </p>
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center w-full px-6 py-3 rounded-lg bg-white text-black hover:bg-white/90 transition-colors"
+            >
+              <PhoneCall class="mr-2 h-5 w-5" />
+              Nous Contacter
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="mt-16">
+        <h2 class="text-2xl font-bold mb-8">Questions Fréquentes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              question: "Combien de temps dure le nettoyage ?",
+              answer: "La durée varie selon la taille et l'état du tapis, généralement entre 1h et 3h pour un nettoyage complet."
+            },
+            {
+              question: "Les produits sont-ils sans danger ?",
+              answer: "Oui, nous utilisons des produits professionnels certifiés, respectueux de l'environnement et sans danger pour votre santé."
+            },
+            {
+              question: "Quel est le temps de séchage ?",
+              answer: "Le temps de séchage varie entre 6 et 12 heures selon le type de tapis et les conditions ambiantes."
+            },
+            {
+              question: "Traitez-vous les tapis anciens ou précieux ?",
+              answer: "Oui, nous avons une expertise particulière pour les tapis délicats et précieux, avec des protocoles adaptés."
+            }
+          ].map((faq) => (
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="font-semibold mb-2">{faq.question}</h3>
+              <p class="text-gray-600">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

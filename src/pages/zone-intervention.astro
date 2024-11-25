@@ -1,0 +1,271 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { MapPin, PhoneCall, Clock, Car, CheckCircle2, Shield, Users } from 'lucide-astro';
+
+const title = 'Zone d\'Intervention Nettoyage Pro Lille | Métropole Lilloise';
+const description = 'Service de nettoyage professionnel disponible dans toute la métropole lilloise. Intervention rapide à Roubaix, Tourcoing, Villeneuve d\'Ascq, Wattrelos et autres communes. Devis gratuit.';
+
+const mainCities = [
+  {
+    name: 'Roubaix',
+    population: '96 000',
+    distance: '13',
+    image: 'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&q=80',
+    specialities: ['Nettoyage de tapis anciens', 'Rénovation de canapés en cuir'],
+    description: 'Centre historique du textile, Roubaix bénéficie de notre expertise en nettoyage de tissus délicats et mobilier ancien.'
+  },
+  {
+    name: 'Tourcoing',
+    population: '97 000',
+    distance: '15',
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80',
+    specialities: ['Traitement anti-acariens', 'Nettoyage de sièges de luxe'],
+    description: 'Ville dynamique en pleine renaissance, nous proposons des services adaptés aux besoins spécifiques des Tourquennois.'
+  },
+  {
+    name: 'Villeneuve d\'Ascq',
+    population: '63 000',
+    distance: '8',
+    image: 'https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?auto=format&fit=crop&q=80',
+    specialities: ['Nettoyage écologique', 'Désinfection de matelas'],
+    description: 'Ville universitaire moderne, nous y proposons des solutions écologiques et innovantes.'
+  },
+  {
+    name: 'Wattrelos',
+    population: '41 000',
+    distance: '16',
+    image: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&q=80',
+    specialities: ['Rénovation de tissus', 'Nettoyage de moquettes'],
+    description: 'Une approche personnalisée pour cette commune résidentielle en plein développement.'
+  },
+];
+
+const secondaryCities = [
+  'Lambersart', 'La Madeleine', 'Marcq-en-Barœul', 'Mons-en-Barœul',
+  'Croix', 'Wasquehal', 'Faches-Thumesnil', 'Wattignies',
+  'Loos', 'Haubourdin', 'Seclin', 'Hellemmes',
+  'Lomme', 'Saint-André-lez-Lille', 'Marquette-lez-Lille'
+];
+---
+
+<Layout {title} {description}>
+  <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <!-- Hero Section -->
+    <section class="relative py-24">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
+            Nettoyage Professionnel dans toute la Métropole Lilloise
+          </h1>
+          <p class="text-xl text-gray-600 mb-8">
+            Service rapide et expert de nettoyage à domicile. Plus de 80 communes desservies dans la MEL.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-md">
+              <Clock class="h-5 w-5 text-primary" />
+              <span>Intervention sous 24-48h</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-md">
+              <Car class="h-5 w-5 text-primary" />
+              <span>Déplacement gratuit</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-md">
+              <MapPin class="h-5 w-5 text-primary" />
+              <span>Rayon de 30 km</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Cities Grid -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Nos Principales Zones d'Intervention</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {mainCities.map((city) => (
+            <div class="group">
+              <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                <img
+                  src={city.image}
+                  alt={`Service de nettoyage à ${city.name}`}
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-0 p-6 text-white">
+                  <h3 class="text-xl font-bold mb-2">{city.name}</h3>
+                  <p class="text-sm mb-2">À {city.distance} km de Lille</p>
+                  <p class="text-sm opacity-90">{city.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Secondary Cities -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Toutes les Communes Desservies</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {secondaryCities.map((city) => (
+              <div class="flex items-center gap-2 bg-white p-4 rounded-lg shadow-sm">
+                <MapPin class="h-5 w-5 text-primary flex-shrink-0" />
+                <span>{city}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="prose prose-lg max-w-4xl mx-auto">
+          <div class="bg-gradient-to-r from-primary/5 to-transparent p-8 rounded-2xl mb-12">
+            <h2 class="text-4xl font-bold mb-6 text-gray-900">
+              Expert en Nettoyage Professionnel dans la Métropole Lilloise
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+              Fort de notre expérience dans le secteur du nettoyage professionnel, nous avons 
+              développé une expertise unique sur l'ensemble de la métropole lilloise. Notre 
+              connaissance approfondie du territoire nous permet d'offrir un service personnalisé 
+              et adapté aux spécificités de chaque commune.
+            </p>
+          </div>
+
+          <div class="space-y-12">
+            <div class="bg-white rounded-xl shadow-sm p-8">
+              <h3 class="text-2xl font-bold mb-4 text-primary">Une Présence Stratégique sur le Territoire</h3>
+              <p class="text-gray-700">
+                Notre positionnement stratégique au cœur de la métropole lilloise nous permet 
+                d'intervenir rapidement dans toutes les communes environnantes. Que vous soyez 
+                à Roubaix, Tourcoing, Villeneuve d'Ascq ou dans l'une des nombreuses communes 
+                de la MEL, nous garantissons une intervention rapide et efficace.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm p-8">
+              <h3 class="text-2xl font-bold mb-4 text-primary">Des Services Adaptés à Chaque Secteur</h3>
+              <p class="text-gray-700 mb-4">
+                Chaque zone de la métropole présente ses particularités, et nous avons adapté 
+                nos services en conséquence :
+              </p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                  <h4 class="font-semibold mb-2">Secteur de Roubaix-Tourcoing</h4>
+                  <p class="text-gray-600">Expertise particulière dans le traitement des textiles anciens 
+                  et le nettoyage de mobilier d'époque</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                  <h4 class="font-semibold mb-2">Villeneuve d'Ascq</h4>
+                  <p class="text-gray-600">Solutions rapides et économiques adaptées aux besoins des étudiants</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                  <h4 class="font-semibold mb-2">Zone résidentielle</h4>
+                  <p class="text-gray-600">Services premium pour l'entretien de mobilier haut de gamme</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm p-8">
+              <h3 class="text-2xl font-bold mb-4 text-primary">Une Organisation Optimisée</h3>
+              <p class="text-gray-700 mb-4">
+                Notre système d'intervention est optimisé pour couvrir efficacement l'ensemble 
+                de la métropole :
+              </p>
+              <div class="grid gap-4">
+                {[
+                  'Équipes mobiles réparties stratégiquement sur le territoire',
+                  'Système de géolocalisation pour une intervention rapide',
+                  'Stock de matériel et produits dans plusieurs points relais',
+                  'Coordination centralisée pour une efficacité maximale'
+                ].map((item) => (
+                  <div class="flex items-center gap-3 bg-gray-50 p-4 rounded-lg">
+                    <CheckCircle2 class="h-5 w-5 text-primary flex-shrink-0" />
+                    <span class="text-gray-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm p-8">
+              <h3 class="text-2xl font-bold mb-4 text-primary">Engagement Qualité sur Tout le Territoire</h3>
+              <p class="text-gray-700 mb-4">
+                Quel que soit votre lieu de résidence dans la métropole, nous nous engageons à 
+                maintenir le même niveau d'excellence :
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                {[
+                  'Techniciens formés et certifiés',
+                  'Matériel professionnel de dernière génération',
+                  'Produits écologiques et certifiés',
+                  'Protocoles de nettoyage standardisés',
+                  'Suivi qualité systématique'
+                ].map((item) => (
+                  <div class="flex items-center gap-3 bg-gray-50 p-4 rounded-lg">
+                    <Shield class="h-5 w-5 text-primary flex-shrink-0" />
+                    <span class="text-gray-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm p-8">
+              <h3 class="text-2xl font-bold mb-4 text-primary">Tarification Transparente</h3>
+              <p class="text-gray-700">
+                Notre politique tarifaire est claire et uniforme sur l'ensemble de la métropole. 
+                Nous appliquons une grille tarifaire transparente, sans frais cachés ni 
+                suppléments de zone. Le devis est gratuit et détaillé, vous permettant de 
+                connaître précisément le coût de notre intervention avant tout engagement.
+              </p>
+            </div>
+
+            <div class="bg-primary/5 rounded-xl p-8">
+              <h3 class="text-2xl font-bold mb-4 text-primary">Au Service de la Communauté Locale</h3>
+              <p class="text-gray-700 mb-4">
+                Notre ancrage local nous permet de comprendre et de répondre aux besoins 
+                spécifiques des habitants de la métropole lilloise. Nous contribuons activement 
+                à l'amélioration du cadre de vie dans toutes les communes où nous intervenons, 
+                en proposant des solutions de nettoyage efficaces et respectueuses de 
+                l'environnement.
+              </p>
+              <p class="text-gray-700 font-medium">
+                Que vous soyez un particulier ou un professionnel, situé au cœur de Lille ou 
+                dans l'une des communes de la métropole, notre équipe est prête à intervenir 
+                pour vous offrir un service de nettoyage professionnel de haute qualité. 
+                Contactez-nous dès maintenant pour découvrir comment nous pouvons vous aider 
+                à maintenir votre intérieur propre et sain.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="bg-primary text-white rounded-2xl p-8 md:p-12 text-center">
+          <h2 class="text-3xl font-bold mb-6">
+            Besoin d'un Service de Nettoyage Professionnel ?
+          </h2>
+          <p class="text-lg mb-8 max-w-2xl mx-auto">
+            Contactez-nous dès maintenant pour un devis gratuit. Notre équipe est à votre disposition 
+            pour intervenir rapidement dans toute la métropole lilloise.
+          </p>
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-white text-primary hover:bg-white/90 transition-colors"
+          >
+            <PhoneCall class="mr-2 h-5 w-5" />
+            Demander un Devis
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
